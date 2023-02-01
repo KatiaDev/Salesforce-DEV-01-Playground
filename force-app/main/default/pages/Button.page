@@ -1,0 +1,197 @@
+<apex:page docType="HTML-5.0" standardController="Account" 
+           extensions="dynamicpicklist" >
+    
+    <apex:form >
+        <apex:pageBlock title="New Account" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+                <apex:commandButton action="{!save}" value="Save & New"/>
+                <apex:commandButton action="{!save}" value="Save"/>
+                
+                
+                
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection title="Account Information" columns="2">
+               
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Name *" for="account__name"/>
+                    <apex:inputText value="{!account.name}" id="account__name"/> 
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Site" for="account__site"/>
+                    <apex:inputText value="{!account.site}" id="account__site"/> 
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Type" for="account__Type"/>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!Typelist}"></apex:selectOptions>
+                    </apex:selectList> 
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account Number" for="account__number"/>
+                    <apex:inputText value="{!account.accountNumber}" id="account__number"/> 
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Phone" for="account__phone"></apex:outputLabel>
+                    <apex:inputText value="{!account.phone} " id="account__phone"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Website" for="account__website"></apex:outputLabel>
+                    <apex:inputText value="{!account.website} " id="account__website"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Fax" for="account__fax"></apex:outputLabel>
+                    <apex:inputText value="{!account.fax}" id="account__fax"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating" for="account__rating"/>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!Ratinglist}"/></apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Employees" for="account__NumberOfEmployees"></apex:outputLabel>
+                    <apex:inputText value="{!account.NumberOfEmployees}" id="account__NumberOfEmployees"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Industry" for="account__industry"></apex:outputLabel>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!Industrylist}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Annual Revenue" for="account__AnnualRevenue"></apex:outputLabel>
+                    <apex:inputText value="{!account.AnnualRevenue}" id="account__AnnualRevenue"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="SIC Code " for="account__Sic"></apex:outputLabel>
+                    <apex:inputText value="{!account.Sic}" id="account__Sic"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            
+            
+            
+           
+            <apex:pageBlockSection title="Address Information" columns="2">
+               
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Billing Street" for="account__BillingAddress"></apex:outputLabel>
+                <apex:inputTextarea value="{!account.BillingStreet}" id="account__BillingStreet"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Billing City" for="account__BillingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.BillingCity}" id="account__BillingCity"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Billing State/Province" for="account__BillingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.BillingState}" id="account__BillingState"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Billing Zip/Postal Code" for="account__BillingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.BillingPostalCode}" id="account__BillingPostalCode"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Billing Country" for="account__BillingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.BillingCountry}" id="account__BillingCountry"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Shipping Street" for="account__ShippingAddress"></apex:outputLabel>
+                <apex:inputTextarea value="{!account.ShippingStreet}" id="account__ShippingStreet"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Shipping City" for="account__ShippingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.ShippingCity}" id="account__ShippingCity"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Shipping State/Province" for="account__ShippingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.ShippingState}" id="account__ShippingState"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Shipping Zip/Postal Code" for="account__ShippingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.ShippingPostalCode}" id="account__ShippingPostalCode"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Shipping Country" for="account__ShippingAddress"></apex:outputLabel>
+                <apex:inputText value="{!account.ShippingCountry}" id="account__ShippingCountry"/>
+                </apex:pageBlockSectionItem>
+                
+                
+
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Additional Information" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Priority" for="account__CustomerPriority__c"></apex:outputLabel>
+                   <apex:selectList size="1">
+          <apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+      </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="SLA" for="account__SLA__c"/>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!SLAlist}"/></apex:selectList>
+                </apex:pageBlockSectionItem>
+            
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="SLA Expiration Date" for="account__SLAExpirationDate__c"></apex:outputLabel>
+                    <apex:inputField value="{! account.SLAExpirationDate__c}" type="date" /> 
+                
+                </apex:pageBlockSectionItem>
+                
+               <apex:pageBlockSectionItem >
+                <apex:outputLabel value="SLA Serial Number " for="account__SLASerialNumber__c"></apex:outputLabel>
+                <apex:inputText value="{!account.SLASerialNumber__c}" id="account__SLASerialNumber__c"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Number of Locations" for="account__NumberofLocations__c"></apex:outputLabel>
+                <apex:inputText value="{!account.NumberofLocations__c}" id="account__NumberofLocations__c"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Upsell Opportunity" for="account__UpsellOpportunity__c"/>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!Opplist}"/></apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Active" for="account__Active__c"/>
+                    <apex:selectList size="1">
+                    <apex:selectOptions value="{!Activelist}"/></apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Description Information">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Description" for="account__Description" />
+                <apex:inputTextarea value="{!account.Description}" id="account__Description"/>
+            </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+           </apex:pageBlock>     
+        
+
+        
+    </apex:form>
+</apex:page>
