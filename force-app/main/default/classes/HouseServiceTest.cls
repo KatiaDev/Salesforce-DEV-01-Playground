@@ -7,7 +7,7 @@ public with sharing class HouseServiceTest {
              
             House__c lstHouses = new House__c();
             //add all required fields
-            lstHouses.Id = 'a0068000006vKTTAA2';
+            //lstHouses.Id = 'a0068000006vKTTAA2';
             lstHouses.Name = 'Big City Living';
             lstHouses.Address__c = '80 Albis st';
             lstHouses.State__c = 'UK';
@@ -21,4 +21,3 @@ public with sharing class HouseServiceTest {
         
     } 
 }
-

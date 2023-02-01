@@ -9,7 +9,7 @@ export default class HousingMap extends LightningElement {
     wiredHouses({ error, data }) {
         if (data) {
         // We are using Javascript Map function to transform the
-    this.mapMarkers = data.map((element) => {
+    this.mapMarkers = data.map((element) => { //arrow function
         return {
           location: {
             Street: element.Address__c,
